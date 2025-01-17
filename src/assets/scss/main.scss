@@ -23,13 +23,13 @@
 }
 
 *::-webkit-scrollbar {
-  width: 6px;
-  height: 30px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(241, 242, 246);
-  border-radius: 6px;
+  background-color: #a1bae5;
+  border-radius: 5px;
 }
 
 ::-ms-input-placeholder {
@@ -83,45 +83,54 @@ main {
     flex-direction: column;
     height: 48%;
 
-    h1{
+    h1 {
       font-weight: bold;
-      font-size: 20px; 
-      color: #424242; 
+      font-size: 20px;
+      color: #424242;
       text-align: center;
+      margin-top: 10px;
     }
 
     .table {
       display: flex;
       justify-content: space-between;
-      border: 1px solid #d2d0ce;
-      border-radius: 6px;
-      width: 100%;
       height: 100%;
-      margin-bottom: 10px;
+      margin: 2px 20px 0 20px;
+
 
       .day {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        border-right: 1px solid #d2d0ce;
+        width: 202px;
+        // background-color: #EDECEA;
+        background-image: url('data:image/svg+xml,<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="path-1-inside-1_38_256" fill="white"><path d="M0 0H30V30H0V0Z"/></mask><path d="M0 0H30V30H0V0Z" /><path d="M0 0V-1H-1V0H0ZM0 1H30V-1H0V1ZM1 30V0H-1V30H1Z" fill="%23CFDAED" mask="url(%23path-1-inside-1_38_256)"/></svg>');
+        background-image: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="path-1-inside-1_38_256" fill="white"><path d="M0 0H20V20H0V0Z"/></mask><path d="M0 0V-1H-1V0H0ZM0 1H20V-1H0V1ZM1 20V0H-1V20H1Z" fill="%23CFDAED" mask="url(%23path-1-inside-1_38_256)"/></svg>');
+        background-position: 0px 9px;
+        background-repeat: repeat;
+        border-bottom: 1px solid #CFDAED;
 
-        &:nth-child(even){
-         background-color: #f9f9f9;
+        &:nth-child(even) {
+          background-color: #f9f9f9;
         }
 
         .title-date {
           display: flex;
           justify-content: space-between;
-          border-bottom: 2px solid #d2d0ce;
           height: 30px;
           padding-left: 10px;
           padding-right: 10px;
           line-height: 30px;
-          font-weight: bold;
+          background-color: #fff;
+          border: 1px solid #CFDAED;
+          border-bottom: 2px solid #CFDAED;
         }
- 
 
-        .content {}
+
+        .content {
+          height: 100%;
+
+
+        }
 
         &:last-child {
           border-right: none;
@@ -138,7 +147,6 @@ page {
   margin: 0 auto;
   margin-bottom: 0.5cm;
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
-  padding: 20px;
 }
 
 page[size="A4"] {
@@ -153,6 +161,7 @@ page[size="A4"][layout="landscape"] {
 }
 
 @media print {
+
   body,
   page,
   main {
