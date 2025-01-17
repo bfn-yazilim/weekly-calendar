@@ -5,14 +5,13 @@ import 'dayjs/locale/tr' // load on demand
 
 (function () {
   'use strict';
-  const START_YEAR = 2025;
+  const START_YEAR = new Date().getFullYear();
   const START_MONTH = 1;
 
   console.log('Weekly Calendar');
  
   async function Init() {
-     
-    console.log('Init', dayjs().format());
+    //console.log('Init');
 
     document.getElementById('page-title').innerText = START_YEAR.toString() + ' Weekly Calendar';
     const lstWeek = [];
@@ -36,11 +35,11 @@ let week = [];
           lstWeek.push(week);
         }
       }
-      console.log(startDate, _dayOfWeek);
+      //console.log(startDate, _dayOfWeek);
       //startDate = addDays(this.startDate, 1);
       //startDate.setDate(newDate.getDate());
     }
-    console.log(lstWeek);
+    //console.log(lstWeek);
 
     let html = '';
     let htmlPage = '';
