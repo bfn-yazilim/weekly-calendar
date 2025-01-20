@@ -7,13 +7,19 @@ import 'dayjs/locale/tr' // load on demand
   'use strict';
   const START_YEAR = new Date().getFullYear();
   const START_MONTH = 1;
-
+  const LANGUAGE = navigator.language;
   console.log('Weekly Calendar');
  
   async function Init() {
     //console.log('Init');
-
-    document.getElementById('page-title').innerText = START_YEAR.toString() + ' Weekly Calendar';
+if(LANGUAGE == 'tr-TR'){
+  document.title = START_YEAR.toString() + ' Haftalık Takvim';
+  document.getElementById('page-title').innerText = START_YEAR.toString() + ' Haftalık Takvim';
+}
+else{  
+  document.title = START_YEAR.toString() + ' Weekly Calendar';
+  document.getElementById('page-title').innerText = START_YEAR.toString() + ' Weekly Calendar';
+}
     const lstWeek = [];
     let startDate = new Date(START_YEAR, START_MONTH, 1);
 let week = [];
@@ -50,7 +56,7 @@ let week = [];
         html += `<page size="A4" layout="landscape">`
       }
       html += `<div class="week">
-<h1>${dayjs(e[0]).locale('tr-tr').format('D MMMM') + '-'+ dayjs(e[4]).locale('tr-tr').format('D MMMM YYYY')}</h1>
+<h1>${dayjs(e[0]).locale(LANGUAGE).format('D MMMM') + '-'+ dayjs(e[4]).locale(LANGUAGE).format('D MMMM YYYY')}</h1>
 <div class="table">`
       for (let ii = 0; ii < lstWeek[i].length; ii++) {
        const ee:Date= lstWeek[i][ii];
